@@ -1,4 +1,4 @@
-package com.example.cache.movie;
+package com.example.cache.book;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ public class BookDaoImpl implements BookDao {
 
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
-	@Cacheable(value = "movieFindCache", key = "#name")
+	@Cacheable(value = "booksCache", key = "#name")
 	public Book findByName(String name) {
 		log.debug("Accessing database");
 		return new Book(1, name);

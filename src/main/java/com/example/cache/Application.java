@@ -6,7 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.example.cache.movie.BookDao;
+import com.example.cache.book.BookDao;
 
 public class Application {
 
@@ -18,7 +18,7 @@ public class Application {
 		BookDao obj = (BookDao) context.getBean("bookDao");
 
 		for (int i = 0; i < 5; i++) {
-			log.debug("Result : {}", obj.findByName("Harry Potter"));
+			log.debug("Result : {}", obj.findByName("Mother"));
 			slowBy2Secs();
 		}
 

@@ -1,4 +1,4 @@
-package com.example.cache.movie;
+package com.example.cache.book;
 
 public interface BookDao{
 	

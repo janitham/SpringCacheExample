@@ -11,20 +11,20 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableCaching
-@ComponentScan({ "com.example.cache.*" })
+@ComponentScan({"com.example.cache.*"})
 public class Config {
 
-	@Bean
-	public CacheManager cacheManager() {
-		return new EhCacheCacheManager(ehCacheCacheManager().getObject());
-	}
+    @Bean
+    public CacheManager cacheManager() {
+        return new EhCacheCacheManager(ehCacheCacheManager().getObject());
+    }
 
-	@Bean
-	public EhCacheManagerFactoryBean ehCacheCacheManager() {
-		EhCacheManagerFactoryBean cmfb = new EhCacheManagerFactoryBean();
-		cmfb.setConfigLocation(new ClassPathResource("ehcache.xml"));
-		cmfb.setShared(true);
-		return cmfb;
-	}
+    @Bean
+    public EhCacheManagerFactoryBean ehCacheCacheManager() {
+        EhCacheManagerFactoryBean cmfb = new EhCacheManagerFactoryBean();
+        cmfb.setConfigLocation(new ClassPathResource("ehcache.xml"));
+        cmfb.setShared(true);
+        return cmfb;
+    }
 
 }
